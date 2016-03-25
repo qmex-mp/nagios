@@ -14,9 +14,9 @@ def check_xen_xl_list_cpubyvm(item, params, info):
         else:
             cputime=int(float(line[5])*100)
             try:
-                perfdata += [(str(line[0]), cputime)]
+                perfdata += [(str(line[0]), str(cputime)+"c")]
             except:
-                perfdata = [(str(line[0]), cputime)]
+                perfdata = [(str(line[0]), str(cputime)+"c")]
             nI += 1
     nI = nI - 1
     return 0, "%s VMs checked" % nI, perfdata
